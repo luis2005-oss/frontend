@@ -1,7 +1,7 @@
 
-function MyTemplate({ children }) {
+function MyTemplate({ children, className=''}) {
   return (
-    <div className="">
+    <div className={className}>
         {children}
     </div>
   )
