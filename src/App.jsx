@@ -6,8 +6,12 @@ import { AbouUsPage } from "./components/pages/aboutUsPage"
 import { BookingPage } from "./components/pages/bookingPage"
 import { ContactPage } from "./components/pages/contactPage"
 import { Navbar } from "./components/organisms/navbar"
+import { useState } from "react"
+import { ModalLogin } from "./components/organisms/modalLogin"
 
 function App() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   const pages = [
     {
       path: '/',
@@ -33,8 +37,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar setModalIsOpen={setModalIsOpen}/>
       <MyTemplate>
+      {modalIsOpen ? <ModalLogin setModalIsOpen={setModalIsOpen} /> : ''}
         <Routes>
           {
             pages.map((page) => {
@@ -48,6 +53,7 @@ function App() {
           }
         </Routes>
       </MyTemplate>
+      
     </>
   )
 }

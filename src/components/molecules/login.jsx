@@ -1,12 +1,20 @@
-import { CircleUserRound } from "lucide-react"
+import { FiShoppingCart } from "react-icons/fi";
 
 
-function LoginNavbar() {
+
+function LoginNavbar({setModalIsOpen}) {
+  const handlerSubmit = (e) =>{
+    e.preventDefault()
+    setModalIsOpen(true)
+  }
+  
   return (
-    <a href="#" className="flex flex-col items-center justify-center">
-      <CircleUserRound className="text-[#FFBB00] size-8"  />
-      <p className="text-[#ffff]">Iniciar Sesión</p>
-    </a>
+    <div className="flex items-center gap-6 justify-center ">
+      <button className="cursor-pointer"><FiShoppingCart  className="text-[#FFBB00] size-6"  /></button>
+      <button className="text-[#ffff] cursor-pointer"
+        onClick={handlerSubmit}
+      >Iniciar Sesión</button>
+    </div>
   )
 }
 

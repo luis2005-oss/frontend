@@ -1,7 +1,7 @@
 
 function MyTemplate({ children }) {
   return (
-    <div className="py-9 px-6">
+    <div className="">
         {children}
     </div>
   )
